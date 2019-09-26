@@ -18,8 +18,8 @@ String writeAPIkey="Y3BBLR7LLW312MCO";
 
 WiFiClient client;
 
-const char *ssid="yjl";
-const char *password="05250525";
+const char *ssid="Áö¿µ iPhone";
+const char *password="10161016!!";
 const char* thingspeak="api.thingspeak.com";
  
 void setup() {
