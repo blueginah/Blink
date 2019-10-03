@@ -31,11 +31,12 @@ app.get('/dump', function(req, res) {
 	if (err) throw err
 	console.log(data)
 	console.log("hello data")
+	cnt=req.query.count
 	res.type('text/html')
 	data=data+' '
 	split_data=data.split('\n')
-	if(split_data.length>45)
-		loop=split_data.length-45
+	if(split_data.length>cnt)
+		loop=split_data.length-cnt-1
 	else
 		loop=0
 
