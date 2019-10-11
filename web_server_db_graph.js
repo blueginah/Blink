@@ -63,15 +63,15 @@ app.get('/dump', function(req, res) {
 	console.log("The number of queries : ",cnt);
 	var qstr = 'select * from sensors ';
 	connection.query(qstr, function(err, rows, cols){
-		if(err) throw err;
-		var num_rows = rows.length;
-		var data_num = cnt;
-		if(num_rows < cnt) data_num = num_rows;
-		console.log("Sending " + data_num + " records");
-		html = ""
-		for(var i=num_rows-data_num;i<num_rows;i++)
-			html+=JSON.stringify(rows[i])+"<br>";
-		res.write(html);
+	if(err) throw err;
+	var num_rows = rows.length;
+	var data_num = cnt;
+	if(num_rows < cnt) data_num = num_rows;
+	console.log("Sending " + data_num + " records");
+	html = ""
+	for(var i=num_rows-data_num;i<num_rows;i++)
+		html+=JSON.stringify(rows[i])+"<br>";
+	res.write(html);
 		 
 	})
 });
